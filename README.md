@@ -131,7 +131,7 @@ Useful for farmers and agri-tech platforms to identify crops quickly.
 
 ### 🚀 How to Run the Project Locally
 1️⃣ Clone the Repository
-git clone <your-github-repo-link>
+git clone "https://github.com/Shree-2516/GreenClassify.git"
 cd VEGETABLE_CLASSIFICATION
 2️⃣ Create Virtual Environment
 python -m venv venv
