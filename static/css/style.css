@@ -1,0 +1,339 @@
+/* ================= GLOBAL ================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html.no-smooth {
+    scroll-behavior: auto;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(180deg, #f4faf6, #eef4ef);
+    color: #2f2f2f;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, #1f4d2b, #256b3d);
+    color: white;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.links a {
+    color: white;
+    margin-left: 22px;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+}
+
+/* underline hover */
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #9affc7;
+    transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+    min-height: 100vh;
+    padding: 90px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light {
+    background: linear-gradient(180deg, #eef7f1, #e6f2ea);
+}
+
+/* ================= HERO ================= */
+.hero {
+    flex-direction: column;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.hero h1 {
+    margin-top: -300px; /* Pulls the text up by 100 pixels */
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 35px;
+}
+
+
+
+
+/* ================= HOME BACKGROUND IMAGE ================= */
+#home {
+    background-image: url("../background.jpg");
+    background-size: cover;
+    /* This ensures the image anchors to the bottom */
+    background-position: bottom; 
+    background-repeat: no-repeat;
+    position: relative;
+    /* Ensure the container has a height to actually show the image */
+    min-height: 100vh; 
+}
+
+/* Optional overlay for readability */
+#home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45); /* dark overlay */
+}
+
+/* Keep text above overlay */
+#home * {
+    position: relative;
+    color: white;
+}
+
+/* ================= CARD ================= */
+.card {
+    width: 92%;
+    max-width: 520px;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    animation: fadeUp 0.8s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* ================= BUTTON ================= */
+.btn {
+    background: linear-gradient(135deg, #1f8f4c, #26b96a);
+    color: white;
+    padding: 14px 34px;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(31, 143, 76, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 25px rgba(38, 185, 106, 0.8);
+}
+
+/* ================= FILE INPUT ================= */
+input[type="file"] {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px dashed #1f8f4c;
+    background: #f6fff9;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background: #ecfff4;
+    box-shadow: 0 0 18px rgba(31, 143, 76, 0.3);
+}
+
+/* ================= IMAGE PREVIEW ================= */
+.preview {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 230px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    animation: zoomIn 0.6s ease;
+}
+
+/* ================= TEXT HIGHLIGHT ================= */
+h3 span {
+    color: #1f8f4c;
+    font-weight: 700;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    .links {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%;
+    }
+}
+/* ================= UPLOAD BOX (PREDICTION ONLY) ================= */
+.upload-box {
+    border: 2px dashed #1f8f4c;
+    border-radius: 16px;
+    padding: 25px;
+    background: #f6fff9;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.upload-box:hover {
+    box-shadow: 0 0 25px rgba(31,143,76,0.25);
+}
+
+/* Two-column layout after prediction */
+.card.wide {
+    max-width: 920px;
+}
+
+.pred-wrap.two-column {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.pred-wrap .col {
+    flex: 1;
+}
+
+.result-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-col .preview {
+    max-width: 360px;
+}
+
+/* Choose Image button */
+.upload-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #1f8f4c, #26b96a);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(31,143,76,0.4);
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(38,185,106,0.8);
+}
+
+/* File name */
+.file-name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Preview before predict */
+.preview-small {
+    margin-top: 15px;
+    width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+}
+
+.preview-small:hover {
+    transform: scale(1.08);
+}
+
+/* utility to hide elements rendered server-side without inline styles */
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 920px) {
+    .pred-wrap.two-column {
+        flex-direction: column;
+    }
+    .card.wide {
+        max-width: 520px;
+    }
+}
