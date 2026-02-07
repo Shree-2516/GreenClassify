@@ -130,6 +130,7 @@ Assists retailers in identifying vegetables for pricing and inventory tracking.
 Useful for farmers and agri-tech platforms to identify crops quickly.
 
 ### 🚀 How to Run the Project Locally
+Dataset Kaggle Link : https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset
 1️⃣ Clone the Repository
 git clone "https://github.com/Shree-2516/GreenClassify.git"
 cd VEGETABLE_CLASSIFICATION
