@@ -1,182 +1,191 @@
 🌿 GreenClassify
-Deep Learning-Based Approach for Vegetable Image Classification
+Deep Learning Web App for Multi-Vegetable Detection & Classification
 
-### 📌 Project Overview
+GreenClassify is an end-to-end Deep Learning powered web application that detects, classifies and counts vegetables from an uploaded image in real-time using a trained CNN model deployed with Flask.
 
-GreenClassify is a deep learning–based web application designed to accurately identify and classify different types of vegetables from images.
-The project leverages Convolutional Neural Networks (CNNs) with transfer learning to provide fast and reliable vegetable classification through a user-friendly web interface built using Flask.
+This project was developed as part of the SkillWallet / SmartInternz Deep Learning Internship Program.
 
-This project is developed as part of SkillWallet / SmartInternz Internship Program under the category Deep Learning.
+🚀 NEW IMPROVEMENTS (Latest Version)
 
-# 🎯 Project Objectives
+✔ Detects multiple vegetables in a single image
+✔ Counts number of vegetables present
+✔ Prevents wrong predictions for non-vegetable images
+✔ Improved UI and prediction workflow
+✔ Clean project structure & GitHub ready
 
-To build an automated vegetable image classification system
+🎯 Project Goal
 
-To apply transfer learning using a pre-trained CNN model
+Build a real-world AI web app that can:
 
-To reduce manual effort in vegetable identification
+• Automatically identify vegetables from images
+• Avoid false predictions for unrelated objects
+• Support multi-object detection & counting
+• Deploy the trained model as a Flask web app
+• Provide a simple and interactive user interface
 
-To deploy the trained model as a Flask web application
-
-To provide an interactive and responsive UI for end users
-
-## 🧠 CNN Model Used
-
-Model: MobileNetV2
-
-Approach: Transfer Learning
-
-Pre-trained On: ImageNet
-
-Input Size: 224 × 224 × 3
-
+🧠 Deep Learning Model
+Feature	Details
+Model	MobileNetV2
+Technique	Transfer Learning
+Framework	TensorFlow / Keras
+Input Size	224 × 224 × 3
+Pretrained On	ImageNet
 Why MobileNetV2?
 
-Lightweight and efficient architecture
+• Lightweight & fast inference
+• Ideal for real-time web apps
+• High accuracy with low compute cost
+• Perfect for deployment environments
 
-Faster inference time
-
-Suitable for real-time and web applications
-
-Good balance between accuracy and performance
-
-## 🏗️ Model Architecture
-Input Image (224x224x3)
-        ↓
-MobileNetV2 (Pre-trained CNN Backbone)
-        ↓
+🏗️ Model Pipeline
+Input Image
+   ↓
+Pre-processing (Resize + Normalize)
+   ↓
+MobileNetV2 Backbone
+   ↓
 Global Average Pooling
-        ↓
-Dense Layer (Softmax)
-        ↓
-Predicted Vegetable Class
+   ↓
+Dense Softmax Layer
+   ↓
+Vegetable Predictions + Count
+🧩 Key Features
+🥕 Multi-Vegetable Detection
 
-## 🛠️ Technologies Used
-Programming & Frameworks
-Python
-TensorFlow / Keras
-Flask
-Machine Learning
-Convolutional Neural Networks (CNN)
-Transfer Learning
-Image Classification
+Detects multiple vegetables in one image and returns prediction list.
+
+🔢 Vegetable Counting
+
+Displays how many vegetables are detected.
+
+🚫 Non-Vegetable Rejection
+
+Model avoids random predictions if image is unrelated.
+
+🌐 Web Application
+
+User can upload image and get predictions instantly.
+
+🎨 Modern UI
+
+Responsive, animated and smooth interface.
+
+🛠️ Tech Stack
+Backend
+
+• Python
+• Flask
+• TensorFlow / Keras
+• NumPy & PIL
+
 Frontend
-HTML5
-CSS3
-JavaScript
-Tools & Platforms
-Kaggle (Model Training)
-VS Code
-Git & GitHub
 
-## 📂 Project Structure
+• HTML5
+• CSS3
+• JavaScript
+
+Tools
+
+• Kaggle (Training Dataset)
+• VS Code
+• Git & GitHub
+
+📂 Updated Project Structure
 VEGETABLE_CLASSIFICATION/
-│
-├── dataset/
-│   ├── train/
-│   ├── test/
-│   └── validation/
 │
 ├── static/
 │   ├── css/
-│   │   └── style.css
 │   ├── uploads/
 │   └── background.jpg
 │
 ├── templates/
 │   └── index.html
 │
-├── app.py
+├── snapshots/              # App screenshots
+├── app.py                  # Flask backend
 ├── vegetable_classifier_model.h5
-├── README.md
-└── requirements.txt
+├── requirements.txt
+├── verify_fix.py
+└── README.md
 
+⚠ Dataset, virtual environment and cache files are excluded from GitHub.
 
-### 🔄 Project Workflow
+🔄 Project Workflow
+1️⃣ Data Collection
 
-Data Collection
-Vegetable images collected and organized by class
-Data Pre-Processing
-Image resizing
-Normalization
-Data augmentation
-Model Building
-MobileNetV2 as base model
-Custom classification head added
-Model Training
-Adam optimizer
-Categorical Cross-Entropy loss
-Early stopping for better generalization
-Model Evaluation
-Validation accuracy monitoring
-Web Application Development
-Flask backend
-Responsive UI
-Prediction
-Upload vegetable image
-Model predicts vegetable class
+Vegetable dataset from Kaggle.
 
-## 📊 Scenarios & Use Cases
-🥕 Automated Vegetable Sorting
+2️⃣ Data Pre-processing
 
-Helps processing facilities automatically classify vegetables in bulk shipments.
+• Resize images to 224×224
+• Normalize pixel values
+• Data augmentation
 
-🛒 Retail & Inventory Management
+3️⃣ Model Training
 
-Assists retailers in identifying vegetables for pricing and inventory tracking.
+• Transfer learning using MobileNetV2
+• Adam optimizer
+• Early stopping
 
-🌾 Agricultural Support
+4️⃣ Model Evaluation
 
-Useful for farmers and agri-tech platforms to identify crops quickly.
+Validation accuracy monitoring.
 
-### 🚀 How to Run the Project Locally
+5️⃣ Deployment
+
+Model integrated into Flask web app.
+
+📊 Real-World Use Cases
+
+🥕 Smart vegetable sorting machines
+🛒 Retail inventory automation
+🌾 Agri-tech crop identification
+📦 Food supply chain automation
+
+🖼️ Application Features
+
+• Upload image
+• Preview before prediction
+• Multi-class vegetable prediction
+• Vegetable counting
+• Smooth UI animations
+
+💻 Run Project Locally (Simple Steps)
+
 Dataset Kaggle Link : https://www.kaggle.com/datasets/misrakahmed/vegetable-image-dataset
-1️⃣ Clone the Repository
-git clone "https://github.com/Shree-2516/GreenClassify.git"
-cd VEGETABLE_CLASSIFICATION
+
+1️⃣ Clone Repository
+git clone https://github.com/Shree-2516/GreenClassify.git
+cd GreenClassify
 2️⃣ Create Virtual Environment
+Windows
 python -m venv venv
-source venv/bin/activate   # For Linux/Mac
-venv\Scripts\activate      # For Windows
+venv\Scripts\activate
+Linux / Mac
+python3 -m venv venv
+source venv/bin/activate
 3️⃣ Install Dependencies
 pip install -r requirements.txt
-4️⃣ Run the Application
+4️⃣ Run Application
 python app.py
-5️⃣ Open in Browser
+5️⃣ Open Browser
 http://127.0.0.1:5000
 
-## 🖼️ Application Features
+Upload an image and test the model 🎉
 
-Single-page scrollable website
+📦 Deliverables
 
-Attractive and responsive UI
+✔ Trained Deep Learning Model
+✔ Flask Web Application
+✔ Source Code
+✔ Documentation
+✔ Demo UI
 
-Image upload with preview
+👨‍💻 Author
 
-Real-time vegetable prediction
+Shreeyash Paraj
+Deep Learning Intern – SkillWallet / SmartInternz
 
-Hover, glow, and animation effects
+📜 License
 
-Smooth user experience
-
-## 📌 Deliverables
-
-✅ Trained CNN Model (.h5)
-
-✅ Flask Web Application
-
-✅ Project Documentation
-
-✅ Source Code
-
-✅ Demo Interface
-
-## 👨‍💻 Author
-
-Project Name: Shreeyash
-Domain: Deep Learning
-Internship Platform: SkillWallet / SmartInternz
-
-## 📜 License
-
-This project is developed for educational and internship purposes only.
+This project is for educational & internship purposes only.
