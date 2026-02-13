@@ -189,3 +189,8 @@ Deep Learning Intern – SkillWallet / SmartInternz
 📜 License
 
 This project is for educational & internship purposes only.
+
+
+"if __name__ == "__main__":
+    app.run(debug=True)
+"
